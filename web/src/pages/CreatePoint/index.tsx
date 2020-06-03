@@ -1,6 +1,6 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi'
+import { FiArrowLeft, FiCheckCircle } from 'react-icons/fi'
 import { Map, TileLayer, Marker } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet';
 import axios from 'axios';
@@ -29,6 +29,7 @@ interface City {
 }
 
 const CreatePoint = () => {
+  const [registerCompleted, setRegisterCompleted] = useState(false);
   const [items, setItems] = useState<Item[]>([]);
   const [uf, setUF] = useState<UF[]>([]);
   const [city, setCity] = useState<City[]>([]);
@@ -134,13 +135,19 @@ const CreatePoint = () => {
 
     await api.post('/points', data);
 
-    alert('Ponto de coleta Criado!');
+    setRegisterCompleted(true);
 
-    history.push('/');
   }
 
   return (
     <div id="page-create-point">
+
+      {registerCompleted ? <div id="register-completed">
+        <FiCheckCircle size={40} color={"#00FF00"} />
+        <span>Cadastro Concluído!</span>
+        <button type='submit' onClick={() => history.push('/')}>Ok!</button>
+      </div> : false}
+
       <header>
         <img src={logo} alt="Ecoleta-logo"/>
         <Link to='/'>
