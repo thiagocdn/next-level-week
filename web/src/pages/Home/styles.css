@@ -4,6 +4,78 @@
   background: url('../../assets/home-background.svg') no-repeat 600px bottom;
 }
 
+
+#search-points {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.95);
+  align-items: center;
+  justify-content: center;
+}
+
+#search-points form .field select {
+  margin-top: 15px;
+  width: 400px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  flex: 1;
+  background: #F0F0F5;
+  border-radius: 8px;
+  border: 0;
+  padding: 16px 24px;
+  font-size: 16px;
+  color: #6C6C80;
+}
+
+#search-points button {
+  width: 260px;
+  height: 56px;
+  background: var(--primary-color);
+  border-radius: 8px;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 16px;
+  border: 0;
+  margin-top: 15px;
+  width: 400px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+#search-points span {
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 36px;
+  color: #FFF;
+  margin-bottom: 20px;
+}
+
+#search-points form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#search-points input {
+  width: 400px;
+  margin-top: 10px;
+  font-size: 24px;
+  padding: 10px;
+  border: 0;
+  border-radius: 8px;
+}
+
+
 #page-home .content {
   width: 100%;
   height: 100%;
@@ -16,8 +88,29 @@
   align-items: flex-start;
 }
 
-#page-home .content header {
-  margin: 48px 0 0;
+
+#page-home header {
+  margin: auto;
+  max-width: 1100px;
+  margin-top: 48px;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#page-home header a {
+  color: var(--title-color);
+  font-weight: bold;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+}
+
+#page-home header a svg {
+  margin-right: 16px;
+  color: var(--primary-color);
 }
 
 #page-home .content main {
@@ -40,22 +133,25 @@
   line-height: 38px;
 }
 
-#page-home .content main a {
+#page-home .content main button {
   width: 100%;
   max-width: 360px;
   height: 72px;
   background: var(--primary-color);
   border-radius: 8px;
+  border: 0;
   text-decoration: none;
 
   display: flex;
   align-items: center;
   overflow: hidden;
+  
+  cursor: pointer;
 
   margin-top: 40px;
 }
 
-#page-home .content main a span {
+#page-home .content main button span {
   display: block;
   background: rgba(0, 0, 0, 0.08);
   width: 72px;
@@ -67,19 +163,19 @@
   transition: background-color 0.2s;
 }
 
-#page-home .content main a span svg {
+#page-home .content main button span svg {
   color: #FFF;
   width: 20px;
   height: 20px;
 }
 
-#page-home .content main a strong {
+#page-home .content main button strong {
   flex: 1;
   text-align: center;
   color: #FFF;
 }
 
-#page-home .content main a:hover {
+#page-home .content main button:hover {
   background: #2FB86E;
 }
 
